@@ -1,0 +1,58 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "P-Count Parkleitsystem einrichten",
+        "description": "Gib die Zugangsdaten für dein Parkerfassungssystem ein.",
+        "data": {
+          "system_id": "Parkerfassungssystem (Benutzer)",
+          "access_code": "Zugangscode (Passwort)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Erneute Authentifizierung",
+        "description": "Der Zugangscode für {title} ist nicht mehr gültig. Bitte gib den neuen Zugangscode ein.",
+        "data": {
+          "access_code": "Zugangscode (Passwort)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zum P-Count Server fehlgeschlagen.",
+      "invalid_auth": "Ungültige Zugangsdaten.",
+      "unknown": "Ein unerwarteter Fehler ist aufgetreten."
+    },
+    "abort": {
+      "already_configured": "Dieses Parkerfassungssystem ist bereits eingerichtet.",
+      "reauth_successful": "Erneute Authentifizierung erfolgreich."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "free_spots": {
+        "name": "Freie Plätze"
+      },
+      "occupied_spots": {
+        "name": "Belegte Plätze"
+      },
+      "total_spots": {
+        "name": "Plätze gesamt"
+      },
+      "occupancy_percent": {
+        "name": "Auslastung"
+      },
+      "total_free": {
+        "name": "Gesamt freie Plätze"
+      },
+      "total_occupied": {
+        "name": "Gesamt belegte Plätze"
+      },
+      "total_all_spots": {
+        "name": "Gesamt Plätze"
+      },
+      "last_updated": {
+        "name": "Letzte Aktualisierung"
+      }
+    }
+  }
+}
