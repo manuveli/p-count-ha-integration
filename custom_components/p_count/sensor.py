@@ -18,7 +18,9 @@ from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .api import ParkingData, ParkingSection
 from .const import DOMAIN
-from .coordinator import PCountConfigEntry, PCountCoordinator
+from homeassistant.config_entries import ConfigEntry
+
+from .coordinator import PCountCoordinator
 
 
 @dataclass(frozen=True, kw_only=True)
@@ -107,7 +109,7 @@ TOTAL_SENSORS: tuple[PCountTotalSensorDescription, ...] = (
 
 async def async_setup_entry(
     hass: HomeAssistant,
-    entry: PCountConfigEntry,
+    entry: ConfigEntry,
     async_add_entities: AddEntitiesCallback,
 ) -> None:
     """Set up P-Count sensors from a config entry."""
@@ -143,7 +145,7 @@ class PCountTotalSensor(CoordinatorEntity[PCountCoordinator], SensorEntity):
         self,
         coordinator: PCountCoordinator,
         description: PCountTotalSensorDescription,
-        entry: PCountConfigEntry,
+        entry: ConfigEntry,
     ) -> None:
         """Initialize the sensor."""
         super().__init__(coordinator)
@@ -175,7 +177,7 @@ class PCountSectionSensor(CoordinatorEntity[PCountCoordinator], SensorEntity):
         self,
         coordinator: PCountCoordinator,
         description: PCountSectionSensorDescription,
-        entry: PCountConfigEntry,
+        entry: ConfigEntry,
         section_short_name: str,
     ) -> None:
         """Initialize the sensor."""

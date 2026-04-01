@@ -15,19 +15,17 @@ from .const import DEFAULT_SCAN_INTERVAL, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
-type PCountConfigEntry = ConfigEntry[PCountCoordinator]
-
 
 class PCountCoordinator(DataUpdateCoordinator[ParkingData]):
     """Coordinator to fetch parking data from P-Count."""
 
-    config_entry: PCountConfigEntry
+    config_entry: ConfigEntry
 
     def __init__(
         self,
         hass: HomeAssistant,
         client: PCountApiClient,
-        config_entry: PCountConfigEntry,
+        config_entry: ConfigEntry,
     ) -> None:
         """Initialize the coordinator."""
         super().__init__(

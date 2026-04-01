@@ -10,14 +10,16 @@ from homeassistant.helpers.aiohttp_client import async_create_clientsession
 
 from .api import PCountApiClient
 from .const import CONF_ACCESS_CODE, CONF_SYSTEM_ID
-from .coordinator import PCountConfigEntry, PCountCoordinator
+from homeassistant.config_entries import ConfigEntry
+
+from .coordinator import PCountCoordinator
 
 _LOGGER = logging.getLogger(__name__)
 
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 
 
-async def async_setup_entry(hass: HomeAssistant, entry: PCountConfigEntry) -> bool:
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up P-Count Parking from a config entry."""
     session = async_create_clientsession(hass)
     client = PCountApiClient(
@@ -35,6 +37,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: PCountConfigEntry) -> bo
     return True
 
 
-async def async_unload_entry(hass: HomeAssistant, entry: PCountConfigEntry) -> bool:
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a config entry."""
     return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
