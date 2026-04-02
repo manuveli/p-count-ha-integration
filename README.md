@@ -181,6 +181,8 @@ Das Polling-Intervall wird automatisch vom P-Count Server vorgegeben (typisch: 3
 
 Dieses Projekt steht unter der [MIT-Lizenz](LICENSE).
 
+> **Hinweis:** Dies ist ein inoffizielles Community-Projekt und steht in keiner Verbindung zur Steinberg Verkehrstechnik GmbH. „P-Count" ist eine Marke der Steinberg Verkehrstechnik GmbH. Die MIT-Lizenz bezieht sich ausschließlich auf den Quellcode dieser Integration — sie gewährt keine Rechte an der P-Count API oder den darüber bereitgestellten Daten. Die Nutzung der API setzt eine gültige Vereinbarung mit dem jeweiligen Betreiber des Parkleitsystems voraus.
+
 ---
 
 <p align="center">
